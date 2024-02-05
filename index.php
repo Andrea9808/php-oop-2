@@ -25,7 +25,7 @@
                             <img src="<?php echo $dog->getImage(); ?>" alt="Product Image">
                             <h6>Title: <?php echo $dog->getTitle(); ?></h6>
                             <h6>Price: <?php echo $dog->getPrice(); ?></h6>
-                            <h6>Icon: <?php echo $dog->getIcon(); ?></h6>
+                            <h6><i class="<?php echo $dog->getIcon(); ?>"></i></h6>
                             <h6>Type Article: <?php echo $dog->getTypeArticle(); ?></h6>
                             <h6>Size: <?php echo $dog->getSize(); ?></h6>
                         </div>
@@ -39,9 +39,9 @@
                     <div class="col-4">
                         <div class="card">
                             <img src="<?php echo $cat->getImage(); ?>" alt="Product Image">
-                            <h6>Title: <?php echo $cat->getTitle(); ?></h6>
+                            <h6>Product: <?php echo $cat->getTitle(); ?></h6>
                             <h6>Price: <?php echo $cat->getPrice(); ?></h6>
-                            <h6>Icon: <?php echo $cat->getIcon(); ?></h6>
+                            <h6><i class="<?php echo $cat->getIcon(); ?>"></i></h6>
                             <h6>Type Article: <?php echo $dog->getTypeArticle(); ?></h6>
                             <h6>Size: <?php echo $cat->getSize(); ?></h6>
                         </div>
