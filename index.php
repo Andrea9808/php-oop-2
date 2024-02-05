@@ -1,118 +1,55 @@
-<?php
 
-    class Product {
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Animal ecommerce</title>
 
-        private $image;
-        private $title;
-        private $price;
-        private $icon;
-        private $type_article;
+    <?php
+        include "Models/product.php";
+        include "Models/food.php";
+        require "db.php";
+    ?>
+ </head>
+ <body>
 
-        public function __construct($image, $title, $price, $icon, $type_article){
+        <div class="container">
+            <h1>CIBO PER CANI:</h1>
+            <div class="row">
+                <?php foreach ($dogFood as $dog) { ?>
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="<?php echo $dog->getImage(); ?>" alt="Product Image">
+                            <h6>Title: <?php echo $dog->getTitle(); ?></h6>
+                            <h6>Price: <?php echo $dog->getPrice(); ?></h6>
+                            <h6>Icon: <?php echo $dog->getIcon(); ?></h6>
+                            <h6>Type Article: <?php echo $dog->getTypeArticle(); ?></h6>
+                            <h6>Size: <?php echo $dog->getSize(); ?></h6>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
 
-
-            $this -> image = $image;
-            $this -> title = $title;
-            $this -> price = $price;
-            $this -> icon = $icon;
-            $this -> type_article = $type_article;
-
-        }
-
-
-        //image
-        public function getImage(){
-            return $this -> image;
-        }
-
-        public function setImage($image){
-            $this -> image = $image;
-        }
-
-        //title
-        public function getTitle(){
-            return $this -> title;
-        }
-
-        public function setTitle($title){
-            $this -> title = $title;
-        }
-
-        //price
-        public function getPrice(){
-            return $this -> price;
-        }
-
-        public function setPrice($price){
-            $this -> price = $price;
-        }
-
-        //icon
-        public function getIcon(){
-            return $this -> icon;
-        }
-
-        public function setIcon($icon){
-            $this -> icon = $icon;
-        }
-
-        //TypeArticle
-        public function getTypeArticle(){
-            return $this -> type_article;
-        }
-
-        public function setTypeArticle($type_article){
-            $this -> type_article = $type_article;
-        }
-
-
-    }
-
-    class Food extends Product{
-
-        private $size;
-
-        public function __construct($image, $title, $price, $icon, $type_article, $size) {
-
-            parent::__construct($image, $title, $price, $icon, $type_article);
-            
-            $this->size = $size;
-
-        }
-
-        
-        //size
-        public function getSize(){
-            return $this -> size;
-        }
-
-        public function setSize($size){
-            $this -> size = $size;
-        }
-
-    }
-
-    //dog biscuit
+            <h1>CIBO PER GATTI:</h1>
+            <div class="row">
+                <?php foreach ($catFood as $cat) { ?>
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="<?php echo $cat->getImage(); ?>" alt="Product Image">
+                            <h6>Title: <?php echo $cat->getTitle(); ?></h6>
+                            <h6>Price: <?php echo $cat->getPrice(); ?></h6>
+                            <h6>Icon: <?php echo $cat->getIcon(); ?></h6>
+                            <h6>Type Article: <?php echo $dog->getTypeArticle(); ?></h6>
+                            <h6>Size: <?php echo $cat->getSize(); ?></h6>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
     
-    $dog = new Food("https://tse3.mm.bing.net/th?id=OIP.b4m2DPttp4O_bnbqCFNrFwHaE8&pid=Api&P=0&h=180","Biscuit",4.50,"fa-solid fa-dog","Food", 'Medium');
+ </body>
+ </html>
     
-    $cat = new Food("https://tse3.mm.bing.net/th?id=OIP.2sdQ6E-BTpMDCMCagQbDcQHaE7&pid=Api&P=0&h=180","Biscuit",3.50,"fa-solid fa-cat","Food", 'Medium');
-
-
-    echo "IMG:" . $dog->getImage() . "<br>";
-    echo "Title:" . $dog->getTitle() . "<br>" ;
-    echo "Price:" . $dog->getPrice() . "<br>" ;
-    echo "Icon:" . $dog->getIcon() . "<br>" ;
-    echo "Type Article:" . $dog->getTypeArticle() . "<br>" ;
-    echo "Size:" . $dog->getSize() . "<br>" ;
-
-
-    echo "<br><br>";
-
-    
-    echo "IMG:" . $cat->getImage() . "<br>";
-    echo "Title:" . $cat->getTitle() . "<br>" ;
-    echo "Price:" . $cat->getPrice() . "<br>" ;
-    echo "Icon:" . $cat->getIcon() . "<br>" ;
-    echo "Type Article:" . $cat->getTypeArticle() . "<br>" ;
-    echo "Size:" . $cat->getSize() . "<br>" ;
