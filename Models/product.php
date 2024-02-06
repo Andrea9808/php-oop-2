@@ -49,6 +49,10 @@
         }
 
         public function setPrice($price){
+
+            if(!is_numeric($price) || $price < 0){
+                throw new Exception("Invalid Price");
+            }
             $this -> price = $price;
         }
 
