@@ -11,10 +11,19 @@
     <title>Animal ecommerce</title>
 
     <?php
+
+    //try{
+
         include "Models/product.php";
         include "Models/food.php";
         include "Models/toys.php";
         include "db.php";
+
+    //}catch (Exception $e) {
+
+       // echo "Error entering the price: " . $e -> getMessage();
+    //}
+        
     ?>
  </head>
  <body>

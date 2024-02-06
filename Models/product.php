@@ -18,7 +18,7 @@
 
             $this -> image = $image;
             $this -> title = $title;
-            $this -> price = $price;
+            $this -> setPrice($price);
             $this -> icon = $icon;
             $this -> type_article = $type_article;
 
