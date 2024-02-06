@@ -33,9 +33,11 @@
             $this->type = $type;
         }
 
+   
+
     }
 
-
+ 
     function printToys($products)
     {
         foreach ($products as $product) {
@@ -43,6 +45,13 @@
             echo '<div class="card">';
             echo '<img src="' . $product->getImage() . '" alt="Product Image">';
             echo '<h6>Product: ' . $product->getTitle() . '</h6>';
+            if ($product->getPrice() >= 20) {
+                $discount = 15;
+                $product->setDiscount($discount);
+                echo '<h6>Discount: ' . $discount . '%</h6>';
+            } else {
+                echo '<h6>No Discount</h6>';
+            }
             echo '<h6>Price: €' . $product->getPrice() . '</h6>';
             echo '<h6><i class="' . $product->getIcon() . '"></i></h6>';
             echo '<h6>Type Article: ' . $product->getTypeArticle() . '</h6>';

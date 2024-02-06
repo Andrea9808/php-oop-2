@@ -1,5 +1,11 @@
 <?php
+    include "traits.php";
+?>
+
+<?php
     class Product {
+
+        use Discounts;
 
         private $image;
         private $title;
@@ -64,5 +70,7 @@
             $this -> type_article = $type_article;
         }
 
-
+     
     }
+
+    

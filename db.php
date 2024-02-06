@@ -27,3 +27,7 @@ $catToy = array(
     new Toys("https://sp.yimg.com/ib/th?id=OPE.4vcXGWUvF4LEAQ300C300&pid=21.1&w=&h=", "Red Led", 18.99, "fa-solid fa-cat", "Toy", "Small", "for all"),
     new Toys("https://sp.yimg.com/ib/th?id=OPE.mGx1p7p%2f7tswrg300C300&pid=21.1&w=&h=", "Wood", 27.25, "fa-solid fa-cat", "Toy", "Small","for all")
 );
+
+
+
+

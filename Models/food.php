@@ -22,9 +22,11 @@ class Food extends Product{
         $this -> size = $size;
     }
 
- 
+   
 
 }
+
+
 
 function printFoods($products)
 {
@@ -33,6 +35,13 @@ function printFoods($products)
         echo '<div class="card">';
         echo '<img src="' . $product->getImage() . '" alt="Product Image">';
         echo '<h6>Product: ' . $product->getTitle() . '</h6>';
+        if ($product->getPrice() >= 3) {
+            $discount = 10;
+            $product->setDiscount($discount);
+            echo '<h6>Discount: ' . $discount . '%</h6>';
+        } else {
+            echo '<h6>No Discount</h6>';
+        }
         echo '<h6>Price: €' . $product->getPrice() . '</h6>';
         echo '<h6><i class="' . $product->getIcon() . '"></i></h6>';
         echo '<h6>Type Article: ' . $product->getTypeArticle() . '</h6>';
